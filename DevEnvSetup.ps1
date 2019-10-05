@@ -106,10 +106,10 @@ write-host "Refreshing environment variables in current window"
 Invoke-Expression "refreshenv"
 
 write-host "Copying .gitconfig"
-Copy-Item -Path ./.gitconfig -Destination $HOME/.gitconfig
+New-Item $HOME\.gitconfig -type file -value ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/Jbond312/DevEnvSetup/master/.gitconfig'))
 
 write-host "Copying .bashrc"
-Copy-Item -Path ./.bashrc -Destination $HOME/.bashrc
+New-Item $HOME\.bashrc -type file -value ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/Jbond312/DevEnvSetup/master/.bashrc'))
 
 Invoke-Expression "refreshenv"
 
