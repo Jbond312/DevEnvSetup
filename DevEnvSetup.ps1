@@ -75,9 +75,6 @@ if (Install-NeededFor 'kubernetes') {
 
 write-host "Installing required dotnet frameworks"
 cinst dotnet-version -y
-cinst dotnetcore-sdk -y --version "2.0.3"
-cinst dotnetcore-sdk -y --version "2.1.802"
-cinst dotnetcore-sdk -y --version "2.2.402"
 cinst dotnetcore-sdk -y
 
 write-host "Installing general development tools"
