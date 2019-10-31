@@ -44,6 +44,9 @@ if (Install-NeededFor 'vscode') {
     cinst vscode-editorconfig -y
     cinst vscode-docker -y
     cinst chocolatey-vscode -y
+	
+	write-host "Copying VSCode user settings"
+	New-Item $HOME\AppData\Roaming\Code\User\settings.json -type file -value ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/Jbond312/DevEnvSetup/master/vscode-settings.json'))
 }
 
 if (Install-NeededFor 'golang') {
@@ -107,6 +110,9 @@ New-Item $HOME\.gitconfig -type file -value ((new-object net.webclient).Download
 
 write-host "Copying .bashrc"
 New-Item $HOME\.bashrc -type file -value ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/Jbond312/DevEnvSetup/master/.bashrc'))
+
+write-host "Copying .bash_aliases"
+New-Item $HOME\.bash_aliases -type file -value ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/Jbond312/DevEnvSetup/master/.bash_aliases'))
 
 Invoke-Expression "refreshenv"
 

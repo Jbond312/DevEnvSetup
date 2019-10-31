@@ -1,3 +1,9 @@
 [alias]
 	co = checkout
 	st = status
+	uc = reset --soft HEAD~1
+	rpo = remote prune origin
+	rh = reset --hard
+	a = add -A
+	l = log --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%ae>%Creset' --abbrev-commit
+	slist = stash list --pretty=format:'%Cblue%gd%Cred: %C(yellow)%s'q
