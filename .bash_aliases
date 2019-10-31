@@ -4,7 +4,7 @@
 alias ls='ls -Alh --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../'
+alias ....='cd ../../../'
 alias reload='source ~/.bash_profile'
 alias path='echo -e ${PATH//:/\\n}'
 
